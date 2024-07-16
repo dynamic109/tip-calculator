@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Reset default input styles */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  font: inherit;
+}
+button {
+  font: inherit;
+}
+
+body {
+  background: hsl(185, 41%, 84%);
+  display: flex;
+  flex-direction: column;
+  font-family: "Space Mono", monospace;
+  min-height: 100vh;
+}
+.logo {
+  width: 70px;
+  margin: 50px auto;
+}
+
+/* */
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px 30px 0 0;
+  background: hsl(0, 0%, 100%);
+  padding: 40px 20px;
+  font-weight: 700;
+}
+.user-input-container {
+  color: hsl(186, 14%, 43%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.user-input {
+  background: hsl(189, 41%, 97%);
+  border: none;
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: end;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.user-input:focus {
+  border: 2px solid hsl(172, 67%, 45%);
+  text-decoration: none;
+}
+
+/*Tip Percent*/
+.tip-percentage-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.tip {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: none;
+  background: hsl(183, 100%, 15%);
+  font-size: 1.25rem;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: 700;
+}
+
+/* INPUT TAGS*/
+
+.input-tag {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-tag > #error-message-bill {
+  display: none;
+  font-size: 12px;
+  color: rgb(225, 130, 130);
+}
+
+.input-tag > #error-message-people {
+  display: none;
+  font-size: 12px;
+  color: rgb(225, 130, 130);
+}
+
+.custom {
+  background: hsl(189, 41%, 97%);
+  color: hsl(186, 14%, 43%);
+  font-size: 22px;
+  font-weight: 600;
+  text-align: end;
+  padding-right: 10px;
+}
+.custom::placeholder {
+  text-align: center;
+}
+
+/*Tip Amount*/
+.tip-amount-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: hsl(183, 100%, 15%);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.amount-container {
+  height: 200px;
+  margin: 20px 0;
+}
+.amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: hsl(185, 41%, 84%);
+}
+.reset-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  font-size: 1.15rem;
+  font-weight: 700;
+  align-items: baseline;
+}
+
+.amount > p > span {
+  color: hsl(184, 14%, 56%);
+  font-size: 13px;
+}
+
+.amount > .price {
+  font-size: 30px;
+  color: hsl(172, 67%, 45%);
+}
+
+/* background image for inputs*/
+#tip-amount {
+  background-image: url("./images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  align-items: center;
+  background-position: left 10px center;
+  padding-left: 40px;
+}
+#number-of-people {
+  background-image: url("./images/icon-person.svg");
+  background-repeat: no-repeat;
+  align-items: center;
+  background-position: left 10px center;
+  padding-left: 40px;
+}
+
+@media (max-height: 767px) {
+  .container {
+    min-height: 100vh;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 0 20px;
+  }
+  .container {
+    height: 70vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 30px;
+    min-height: max-content;
+  }
+  .user-input-container {
+    width: 45%;
+  }
+
+  .tip-amount-container {
+    width: 45%;
+  }
+  .tip-percentage-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
